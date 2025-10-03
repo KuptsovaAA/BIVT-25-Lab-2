@@ -125,11 +125,26 @@ namespace Lab2
             double SY = 0;
 
             // code here
-            
+            for (double x = a; x <= b; x += h)
+            {
+                double elem = 1, s = 1;
+                int i = 0, f = 1;
+                x = Math.Round(x, 2);
+                while (Math.Abs(elem) > E)
+                {
+                    elem = ((2 * i + 1) * s) / f;
+                    SS += elem;
+                    i++;
+                    f *= i;
+                    s *= x * x;
+                }
+                SY += (1 + 2 * x * x) * Math.Pow(Math.Exp(1), x * x);
+            }
             // end
 
             return (SS, SY);
         }
     }
 }
+
 
