@@ -13,16 +13,11 @@ namespace Lab2
 
             // code here
             double ch = 1, zn = 1;
-            answer = Math.Sin(x);
-            for (int i = 1; i <= n - 1; i++)
+            answer = Math.Sin(x)/zn;
+            for (int i = 2; i < n + 1; i++)
             {
                 ch = Math.Sin(x * i);
-                zn = x * x;
-                answer = ch / zn;
-                if (Math.Abs(answer) < E)
-                {
-                    break;
-                }
+                zn *= x;
                 answer += ch / zn;
             }
             // end
@@ -137,3 +132,4 @@ namespace Lab2
         }
     }
 }
+
