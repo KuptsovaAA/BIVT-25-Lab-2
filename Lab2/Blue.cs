@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
@@ -12,7 +12,19 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double ch = 1, zn = 1;
+            answer = Math.Sin(x);
+            for (int i = 1; i <= n - 1; i++)
+            {
+                ch = Math.Sin(x * i);
+                zn = x * x;
+                answer = ch / zn;
+                if (Math.Abs(answer) < E)
+                {
+                    break;
+                }
+                answer += ch / zn;
+            }
             // end
 
             return answer;
@@ -22,7 +34,14 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double pow1 = 1, pow2 = 1, f = 1;
+            for (int i = 1; i < (n + 1); i++)
+            {
+                pow1 *= -1;
+                pow2 *= 5;
+                f *= i;
+                answer += pow1 * (pow2 / f);
+            }
             // end
 
             return answer;
@@ -30,11 +49,16 @@ namespace Lab2
         public long Task3(int n)
         {
             long answer = 0;
-
             // code here
-
+            long a = 1, b = 0, sum = 0;
+            for (int i = 0; i < (n - 1); i++)
+            {
+                answer = answer + a;
+                sum = a;
+                a = a + b;
+                b = sum;
+            }
             // end
-
             return answer;
         }
         public int Task4(int a, int h, int L)
@@ -42,7 +66,13 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            long s = 0;
+            while (s <= L)
+            {
+            s = s + (a + answer * h);
+            answer = answer + 1;
+            }
+            answer--;
             // end
 
             return answer;
@@ -52,7 +82,17 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double ch = 0, zn = 1;
+            double elem = ch / zn;
+            int i = 1;
+            do
+            {
+                ch += i;
+                zn *= x;
+                answer += elem;
+                elem = ch/ zn;
+                i++;
+            } while (elem > 0.0001);
             // end
 
             return answer;
@@ -62,7 +102,12 @@ namespace Lab2
             int answer = 0;
 
             // code here
-
+            do
+            {
+                S *= 2;
+                answer += h;
+            }
+            while (S < L);
             // end
 
             return answer;
@@ -85,7 +130,7 @@ namespace Lab2
             double SY = 0;
 
             // code here
-
+            
             // end
 
             return (SS, SY);
