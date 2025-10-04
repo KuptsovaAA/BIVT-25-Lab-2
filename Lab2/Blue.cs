@@ -114,7 +114,26 @@ namespace Lab2
             int c = 0;
 
             // code here
-
+            double S1 = S, S2 = S, S3 = S;
+            double distance = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                a += S1;
+                S1 *= 1.01;   
+            }
+            
+            while (distance < 100)
+            {
+                b++;
+                distance += S2;
+                S2 *= 1.01; 
+            } 
+            
+            while (S3 <= 42)
+            {
+                c++;
+                S3 *= 1.01;
+            }
             // end
 
             return (a, b, c);
@@ -146,5 +165,6 @@ namespace Lab2
         }
     }
 }
+
 
 
