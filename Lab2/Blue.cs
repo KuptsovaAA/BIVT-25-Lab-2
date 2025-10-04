@@ -116,23 +116,24 @@ namespace Lab2
             // code here
             double S1 = S, S2 = S, S3 = S;
             double distance = 0;
-            for (int i = 0; i < 7; i++)
+            for (int i = 1; i <= 7; i++)
             {
                 a += S1;
-                S1 *= 1.01;   
+                S1 += (S1 * (I/100));   
+                
             }
             
             while (distance < 100)
             {
                 b++;
                 distance += S2;
-                S2 *= 1.01; 
+                S2 += (S2 * (I/100));
             } 
             
             while (S3 <= 42)
             {
                 c++;
-                S3 *= 1.01;
+                S3 += (S3 * (I/100));
             }
             // end
 
@@ -165,6 +166,7 @@ namespace Lab2
         }
     }
 }
+
 
 
 
